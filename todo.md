@@ -71,3 +71,5 @@
 - [x] Validate auction counts, manager totals, roster ownership, balances, and public read access, then checkpoint and push the completed release.
 - [x] Add a deployment-safe UFA League favicon using the existing dark-green-and-gold brand mark.
 - [x] Wire the favicon into Next.js metadata, validate the production build and browser response, then checkpoint and push it to GitHub main.
+- [x] Stop the public homepage from requiring the server-only Supabase service-role key at runtime while keeping protected admin workflows secure.
+- [x] Revalidate production behavior and push the Vercel runtime fix to GitHub main.

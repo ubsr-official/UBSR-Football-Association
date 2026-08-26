@@ -20,6 +20,20 @@ export async function getLeagueIdentity(): Promise<LeagueIdentity | null> {
   return { userId: user.id, memberId, teamId: team?.id ?? null, isAdmin: Boolean(seat), adminSeat: (seat?.seat as "owner" | "arish" | undefined) ?? null };
 }
 
+export async function getPublicLeagueSummary() {
+  const supabase = await createSupabaseServerClient();
+  const { data, error } = await supabase.rpc("get_public_league_summary");
+  const row = Array.isArray(data) ? data[0] : data;
+  if (error || !row) return { memberCount: 0, teamCount: 0, auctionedPlayers: 0, awaitingOutcome: 0, marketIsOpen: false };
+  return {
+    memberCount: Number(row.member_count ?? 0),
+    teamCount: Number(row.team_count ?? 0),
+    auctionedPlayers: Number(row.auctioned_players ?? 0),
+    awaitingOutcome: Number(row.awaiting_outcome ?? 0),
+    marketIsOpen: Boolean(row.market_is_open),
+  };
+}
+
 export async function getLeagueOverview() {
   const admin = createSupabaseAdminClient();
   const [members, teams, auction, market, standings, fixtures] = await Promise.all([

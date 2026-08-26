@@ -1,0 +1,5 @@
+{
+  "project_id": "arysutfctdzxppmmemtt",
+  "name": "public_league_summary",
+  "query": "create or replace function public.get_public_league_summary() returns table (member_count bigint, team_count bigint, auctioned_players bigint, awaiting_outcome bigint, market_is_open boolean) language sql security definer set search_path = public stable as $$ select (select count(*) from public.league_members), (select count(*) from public.teams where is_active = true), (select count(*) from public.auction_records where status = 'sold'), (select count(*) from public.auction_records where status in ('unsold', 'not_called', 'auction_in_progress')), coalesce((select is_open from public.market_settings where id = 1), false); $$; revoke all on function public.get_public_league_summary() from public; grant execute on function public.get_public_league_summary() to anon, authenticated;"
+}
