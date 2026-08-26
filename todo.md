@@ -43,7 +43,7 @@
 - [x] Restore structured match-log entry and visible event history after the sandbox recovery.
 - [x] Restore safe unauthenticated administrator access and the responsive mobile passwordless sign-in layout after recovery.
 - [x] Complete non-interactive protected-workflow validation through production builds, database policy review, redirect/access-denied states, and documented empty states.
-- [ ] Save the recovered UFA League Next.js platform as a new publish-ready project version.
+- [x] Save the recovered UFA League Next.js platform as a new publish-ready project version.
 - [x] Add and verify manager-facing team-branding controls for editing team names and uploading or replacing team logos.
 - [x] Document and test the standings calculation that excludes friendlies and recalculates after confirmed competitive results.
 - [x] Verify the dashboard, fixtures, market, team-room, and administrator routes with disposable linked manager and administrator test sessions, then remove those test accounts.
@@ -56,3 +56,4 @@
 - [x] Exercise and document browser-rendered authenticated loading states across protected UFA League routes, then consolidate full protected-route coverage evidence.
 - [x] Capture authenticated global-loading evidence across every protected manager and administrator route, then retain the route-wide verification record before release.
 - [x] Diagnose and correct the recovered UFA League overview’s zero manager-team count against the seeded Supabase records.
+- [x] Save a new web project checkpoint for the recovered Next.js UFA League build after final validation, and record its version identifier.
