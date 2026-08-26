@@ -18,3 +18,22 @@
 - [x] Record and display an append-only trade event history for public listings, offers, negotiations, and resolutions.
 - [x] Re-run key desktop and mobile checks, then save the final project version for publishing.
 - [x] Save the verified UBSR platform as the final publish-ready project version.
+- [ ] Rename all product-facing references from UBSR League to UBSR FA League, with UFA League and UFL as short forms.
+- [ ] Create and populate a private GitHub repository named UBSR-Football-Association.
+- [ ] Audit Vercel compatibility and document the required environment, database, authentication, and deployment changes without publishing externally.
+- [ ] Add editable team names and team-logo storage for all manager teams.
+- [ ] Add administrator-defined fixture windows that specify the eligible teams and permitted date/time ranges.
+- [ ] Add manager availability submissions within each approved fixture window.
+- [ ] Implement deterministic overlap checks that propose fixture times only after both teams submit availability and administrators publish the result.
+- [ ] Add match records, match logs, friendly designation, and fixture-result approval controls.
+- [ ] Add a live league points table that excludes friendlies and updates from confirmed competitive results.
+- [ ] Implement production-readiness improvements for roles, auditability, validation, data export, observability, accessibility, and operating procedures.
+- [ ] Test the expanded scheduling, match-log, friendly, standings, branding, repository, and hosting-readiness flows.
+- [ ] Apply competitive standings rules of 3 points for a win, 1 for a draw, and 0 for a loss, with goal difference then goals scored as tiebreakers.
+- [ ] Propose every valid shared available day, require both managers to accept a proposed day, and publish the fixture only after administrator approval.
+- [ ] Record comprehensive match logs for scorers, assists, cards, player of the match, committee notes, and competitive or friendly classification.
+- [ ] Let each manager upload and manage their own team logo image.
+- [ ] Apply competitive standings rules of 3 points for a win, 1 for a draw, and 0 for a loss, with goal difference then goals scored as tiebreakers.
+- [ ] Propose every valid Asia/Kolkata availability overlap and require both managers to accept a proposed slot before administrator publication.
+- [ ] Record comprehensive match logs for scorers, assists, cards, player of the match, committee notes, and competitive or friendly classification.
+- [ ] Let each manager upload and manage their own team logo image.
