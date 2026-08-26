@@ -22,9 +22,9 @@
 - [ ] Create and populate a private GitHub repository named UBSR-Football-Association.
 - [ ] Audit Vercel compatibility and document the required environment, database, authentication, and deployment changes without publishing externally.
 - [ ] Add editable team names and team-logo storage for all manager teams.
-- [ ] Add administrator-defined fixture windows that specify the eligible teams and permitted date/time ranges.
-- [ ] Add manager availability submissions within each approved fixture window.
-- [ ] Implement deterministic overlap checks that propose fixture times only after both teams submit availability and administrators publish the result.
+- [ ] Add administrator-defined fixture windows that specify the eligible teams and permitted match days.
+- [ ] Add manager day-availability submissions within each approved fixture window.
+- [ ] Implement deterministic overlap checks that propose shared days only after both teams submit availability and administrators publish the result.
 - [ ] Add match records, match logs, friendly designation, and fixture-result approval controls.
 - [ ] Add a live league points table that excludes friendlies and updates from confirmed competitive results.
 - [ ] Implement production-readiness improvements for roles, auditability, validation, data export, observability, accessibility, and operating procedures.
@@ -37,3 +37,6 @@
 - [ ] Propose every valid Asia/Kolkata availability overlap and require both managers to accept a proposed slot before administrator publication.
 - [ ] Record comprehensive match logs for scorers, assists, cards, player of the match, committee notes, and competitive or friendly classification.
 - [ ] Let each manager upload and manage their own team logo image.
+- [ ] Replace the Vite and Express implementation with a Next.js application using the App Router.
+- [ ] Migrate secure authentication, database access, storage, role checks, and public/private discussion rules into Next.js-compatible services.
+- [ ] Validate a production Next.js build and document Vercel environment requirements before any deployment is attempted.
