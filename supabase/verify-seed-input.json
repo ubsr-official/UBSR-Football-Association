@@ -1,0 +1,4 @@
+{
+  "project_id": "arysutfctdzxppmmemtt",
+  "query": "select (select count(*) from public.league_members) as members, (select count(*) from public.teams) as teams, (select count(*) from public.auction_records where status = 'sold') as sold, (select count(*) from public.auction_records where status = 'unsold') as unsold, (select count(*) from public.auction_records where status = 'not_called') as not_called limit 1;"
+}

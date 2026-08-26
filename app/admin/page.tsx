@@ -1,0 +1,6 @@
+import { AppShell } from "@/components/app-shell";
+import { AdminWorkspace } from "./admin-workspace";
+import { createSupabaseAdminClient } from "@/lib/supabase/admin";
+import { requireLeagueAdmin } from "@/lib/league";
+
+export default async function AdminPage() { await requireLeagueAdmin(); const admin = createSupabaseAdminClient(); const [{ data: members }, { data: teams }, { data: settings }, { data: seats }, { data: fixtures }] = await Promise.all([admin.from("league_members").select("id,full_name,member_code,league_role,base_price,auth_user_id").order("full_name"), admin.from("teams").select("id,name").order("name"), admin.from("market_settings").select("*").eq("id", 1).single(), admin.from("admin_seats").select("seat,display_name,user_id"), admin.from("fixtures").select("id,match_day,competition_class,status,home:teams!fixtures_home_team_id_fkey(name),away:teams!fixtures_away_team_id_fkey(name)").order("match_day", { ascending: false })]); return <AppShell><div className="page-head"><div><p className="eyebrow">Owner and Arish controls</p><h1>Commissioner workspace.</h1><p>Every material league decision is role-gated, recorded, and visible through the secure operational trail.</p></div></div><AdminWorkspace members={members ?? []} teams={teams ?? []} market={settings} seats={seats ?? []} fixtures={fixtures ?? []} /></AppShell>; }

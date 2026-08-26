@@ -21,6 +21,8 @@ The current Vite and Express application completed a local production build, but
 
 > **Deployment boundary:** The present managed database, login system, and storage helpers do not transfer automatically to Vercel. The Next.js rebuild must use independently configured production services and Vercel environment variables before deployment.
 
+Supabase’s documented server-side authentication and Row Level Security model should be used for all member and manager data access. The browser receives only a publishable key; restricted data mutations and service-role operations stay in server-side Next.js code. Supabase Storage policies will restrict team-logo uploads to the authenticated team manager or an administrator, while database RLS policies will keep private team messages unavailable to other teams and administrators unless the policy explicitly grants access. [3]
+
 ## Core domain model
 
 The rebuilt database will preserve the present member, manager, auction, roster, public-trade, private-team-message, and audit concepts. It will extend them with the following first-class records.
@@ -93,6 +95,10 @@ The Next.js application can be linked to the GitHub repository once the rewrite 
 
 Vercel automatically detects Node.js and Express entrypoints and supports TypeScript functions, but platform-compatible assets, secure environment variables, and robust error handling still need to be part of the Next.js migration. [1] [2]
 
+## Security verification record
+
+After the UFA League schema, fixture workflow, and trade workflow migrations were applied, Supabase Security Advisor was run against the active project. Anonymous execution was revoked for every UFA League `SECURITY DEFINER` function. The remaining advisor notices identify authenticated execution of the deliberately role-checked server procedures; those procedures validate the current administrator or participating manager before changing data. The generated `rls_auto_enable` helper was separately revoked from all API roles before release. The advisor remediation guidance remains available at [Supabase’s database linter documentation](https://supabase.com/docs/guides/database/database-linter?lint=0028_anon_security_definer_function_executable).
+
 ## Implementation order
 
 1. **Foundation:** Rename all visible product text; create the Next.js App Router shell; port the visual system; establish Supabase projects, roles, and migrations.
@@ -111,3 +117,4 @@ The next build iteration can begin immediately, but production deployment requir
 
 [1]: https://vercel.com/docs/frameworks/backend/express "Express on Vercel"
 [2]: https://vercel.com/docs/functions/runtimes/node-js "Using the Node.js Runtime with Vercel Functions"
+[3]: https://supabase.com/docs/guides/getting-started/features "Supabase Features: RLS, server-side auth, and storage"

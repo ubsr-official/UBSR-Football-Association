@@ -1,0 +1,1 @@
+{"project_id":"arysutfctdzxppmmemtt","name":"ufa_revoke_generated_rls_helper","query":"revoke all on function public.rls_auto_enable() from public, anon, authenticated;\n"}
