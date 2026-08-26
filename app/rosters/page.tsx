@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { AppShell } from "@/components/app-shell";
 import { createSupabaseAdminClient } from "@/lib/supabase/admin";
 import { points } from "@/lib/league";

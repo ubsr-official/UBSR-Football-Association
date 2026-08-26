@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { AppShell } from "@/components/app-shell";
 import { TeamRoom } from "./team-room";
 import { getLeagueIdentity } from "@/lib/league";

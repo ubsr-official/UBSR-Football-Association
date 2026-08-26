@@ -63,3 +63,5 @@
 - [x] Diagnose and correct the recovered UFA League overview’s zero manager-team count against the seeded Supabase records.
 - [x] Save a new web project checkpoint for the recovered Next.js UFA League build after final validation, and record its version identifier.
 - [x] Save the completed production-operations release as the final publish-ready UFA League project version.
+- [x] Fix the Next.js /fixtures prerender failure caused by eager Supabase service-role client initialization when build-time secrets are unavailable.
+- [x] Revalidate the corrected production build, tests, and protected fixtures route, then push the fix to GitHub main.

@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { AppShell } from "@/components/app-shell";
 import { StandingsTable } from "@/components/standings-table";
 import { getLeagueOverview } from "@/lib/league";

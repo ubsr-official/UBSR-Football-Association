@@ -5,6 +5,8 @@ import { AdminWorkspace } from "./admin-workspace";
 import { createSupabaseAdminClient } from "@/lib/supabase/admin";
 import { getLeagueIdentity } from "@/lib/league";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminPage() {
   const identity = await getLeagueIdentity();
   if (!identity) redirect("/login");
