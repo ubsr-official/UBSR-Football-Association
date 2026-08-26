@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>UFA League</title>
+  <rect width="64" height="64" rx="16" fill="#063b2b"/>
+  <path d="M20 17h8v18c0 5 1.9 7 4 7s4-2 4-7V17h8v18c0 10-4.4 15-12 15s-12-5-12-15V17Z" fill="#d8b45a"/>
+  <path d="M18 14h28" stroke="#f3e7c2" stroke-width="3" stroke-linecap="round" opacity=".9"/>
+</svg>

@@ -8,6 +8,10 @@ const sans = Instrument_Sans({ subsets: ["latin"], variable: "--font-sans" });
 export const metadata: Metadata = {
   title: "UFA League | UBSR FA League",
   description: "The secure operating system for the United Boys Socialist Republic Football Association.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

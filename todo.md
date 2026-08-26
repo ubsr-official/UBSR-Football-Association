@@ -69,3 +69,5 @@
 - [x] Create a separate immutable auction log dataset/table that is independent from operational roster and balance records.
 - [x] Expose the finalized auction log publicly while preventing public users from changing auction records.
 - [x] Validate auction counts, manager totals, roster ownership, balances, and public read access, then checkpoint and push the completed release.
+- [x] Add a deployment-safe UFA League favicon using the existing dark-green-and-gold brand mark.
+- [x] Wire the favicon into Next.js metadata, validate the production build and browser response, then checkpoint and push it to GitHub main.
