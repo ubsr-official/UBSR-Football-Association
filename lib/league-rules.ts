@@ -12,3 +12,7 @@ export function rankStandings(rows: StandingsRow[]) {
 export function isMarketOpen(ownerEnabled: boolean, arishEnabled: boolean) {
   return ownerEnabled && arishEnabled;
 }
+
+export function qualifiesForStandings(input: { competitionClass: "competitive" | "friendly"; status: "scheduled" | "postponed" | "completed"; resultConfirmedAt: string | null }) {
+  return input.competitionClass === "competitive" && input.status === "completed" && Boolean(input.resultConfirmedAt);
+}

@@ -24,7 +24,7 @@ export async function getLeagueOverview() {
   const admin = createSupabaseAdminClient();
   const [members, teams, auction, market, standings, fixtures] = await Promise.all([
     admin.from("league_members").select("id", { count: "exact", head: true }),
-    admin.from("teams").select("id", { count: "exact", head: true }),
+    admin.from("teams").select("id").eq("is_active", true),
     admin.from("auction_records").select("status"),
     admin.from("market_settings").select("is_open, owner_enabled, arish_enabled").eq("id", 1).single(),
     admin.from("live_standings").select("*").order("points", { ascending: false }).order("goal_difference", { ascending: false }).order("goals_for", { ascending: false }),
@@ -32,7 +32,7 @@ export async function getLeagueOverview() {
   ]);
   const auctionCounts = { sold: 0, unsold: 0, notCalled: 0, inProgress: 0 };
   auction.data?.forEach(record => { if (record.status === "sold") auctionCounts.sold += 1; if (record.status === "unsold") auctionCounts.unsold += 1; if (record.status === "not_called") auctionCounts.notCalled += 1; if (record.status === "auction_in_progress") auctionCounts.inProgress += 1; });
-  return { memberCount: members.count ?? 0, teamCount: teams.count ?? 0, auctionCounts, market: market.data, standings: (standings.data ?? []) as Standing[], fixtures: fixtures.data ?? [] };
+  return { memberCount: members.count ?? 0, teamCount: teams.data?.length ?? 0, auctionCounts, market: market.data, standings: (standings.data ?? []) as Standing[], fixtures: fixtures.data ?? [] };
 }
 
 export async function requireLeagueIdentity() {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { isMarketOpen, rankStandings, sharedAvailableDays } from "../lib/league-rules";
+import { isMarketOpen, qualifiesForStandings, rankStandings, sharedAvailableDays } from "../lib/league-rules";
 
 describe("UFA League operating rules", () => {
   it("proposes every unique shared available day without a time parameter", () => {
@@ -19,5 +19,12 @@ describe("UFA League operating rules", () => {
     expect(isMarketOpen(true, false)).toBe(false);
     expect(isMarketOpen(false, true)).toBe(false);
     expect(isMarketOpen(true, true)).toBe(true);
+  });
+
+  it("excludes friendlies and unconfirmed results from the competitive standings", () => {
+    expect(qualifiesForStandings({ competitionClass: "competitive", status: "completed", resultConfirmedAt: "2026-09-01T12:00:00Z" })).toBe(true);
+    expect(qualifiesForStandings({ competitionClass: "friendly", status: "completed", resultConfirmedAt: "2026-09-01T12:00:00Z" })).toBe(false);
+    expect(qualifiesForStandings({ competitionClass: "competitive", status: "completed", resultConfirmedAt: null })).toBe(false);
+    expect(qualifiesForStandings({ competitionClass: "competitive", status: "scheduled", resultConfirmedAt: null })).toBe(false);
   });
 });

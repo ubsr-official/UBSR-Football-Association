@@ -1,0 +1,1 @@
+{"project_id":"arysutfctdzxppmmemtt","query":"select (select count(*) from auth.users where email like 'ufa-%-validation-%@example.test') as disposable_auth_users, (select count(*) from public.league_members where auth_user_id is not null) as linked_members, (select count(*) from public.admin_seats where seat = 'arish' and user_id is not null) as linked_arish_seat limit 1;"}

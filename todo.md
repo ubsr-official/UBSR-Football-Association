@@ -18,25 +18,41 @@
 - [x] Record and display an append-only trade event history for public listings, offers, negotiations, and resolutions.
 - [x] Re-run key desktop and mobile checks, then save the final project version for publishing.
 - [x] Save the verified UBSR platform as the final publish-ready project version.
-- [ ] Rename all product-facing references from UBSR League to UBSR FA League, with UFA League and UFL as short forms.
-- [ ] Create and populate a private GitHub repository named UBSR-Football-Association.
-- [ ] Audit Vercel compatibility and document the required environment, database, authentication, and deployment changes without publishing externally.
-- [ ] Add editable team names and team-logo storage for all manager teams.
-- [ ] Add administrator-defined fixture windows that specify the eligible teams and permitted match days.
-- [ ] Add manager day-availability submissions within each approved fixture window.
-- [ ] Implement deterministic overlap checks that propose shared days only after both teams submit availability and administrators publish the result.
-- [ ] Add match records, match logs, friendly designation, and fixture-result approval controls.
-- [ ] Add a live league points table that excludes friendlies and updates from confirmed competitive results.
-- [ ] Implement production-readiness improvements for roles, auditability, validation, data export, observability, accessibility, and operating procedures.
-- [ ] Test the expanded scheduling, match-log, friendly, standings, branding, repository, and hosting-readiness flows.
-- [ ] Apply competitive standings rules of 3 points for a win, 1 for a draw, and 0 for a loss, with goal difference then goals scored as tiebreakers.
-- [ ] Propose every valid shared available day, require both managers to accept a proposed day, and publish the fixture only after administrator approval.
-- [ ] Record comprehensive match logs for scorers, assists, cards, player of the match, committee notes, and competitive or friendly classification.
-- [ ] Let each manager upload and manage their own team logo image.
-- [ ] Apply competitive standings rules of 3 points for a win, 1 for a draw, and 0 for a loss, with goal difference then goals scored as tiebreakers.
-- [ ] Propose every valid Asia/Kolkata availability overlap and require both managers to accept a proposed slot before administrator publication.
-- [ ] Record comprehensive match logs for scorers, assists, cards, player of the match, committee notes, and competitive or friendly classification.
-- [ ] Let each manager upload and manage their own team logo image.
-- [ ] Replace the Vite and Express implementation with a Next.js application using the App Router.
-- [ ] Migrate secure authentication, database access, storage, role checks, and public/private discussion rules into Next.js-compatible services.
-- [ ] Validate a production Next.js build and document Vercel environment requirements before any deployment is attempted.
+- [x] Rename all product-facing references from UBSR League to UBSR FA League, with UFA League and UFL as short forms.
+- [x] Update the authorized GitHub repository named UBSR-Football-Association without rewriting its existing history.
+- [x] Audit Vercel compatibility and document the required environment, database, authentication, and deployment changes without publishing externally.
+- [x] Add editable team names and team-logo storage for all manager teams.
+- [x] Add administrator-defined fixture windows that specify the eligible teams and permitted match days.
+- [x] Add manager day-availability submissions within each approved fixture window.
+- [x] Implement deterministic overlap checks that propose shared days only after both teams submit availability and administrators publish the result.
+- [x] Add match records, structured match logs, friendly designation, and fixture-result approval controls.
+- [x] Add a live league points table that excludes friendlies and updates from confirmed competitive results.
+- [ ] Complete the remaining production-readiness work for data export, observability, and formal operating procedures.
+- [x] Test the expanded rule logic, responsive interface, repository state, and hosting-readiness build.
+- [x] Apply competitive standings rules of 3 points for a win, 1 for a draw, and 0 for a loss, with goal difference then goals scored as tiebreakers.
+- [x] Propose every valid shared available day, require both managers to accept a proposed day, and publish the fixture only after administrator approval.
+- [x] Record comprehensive match logs for scorers, assists, cards, player of the match, committee notes, and competitive or friendly classification.
+- [x] Let each manager upload and manage their own team logo image.
+- [x] Apply competitive standings rules of 3 points for a win, 1 for a draw, and 0 for a loss, with goal difference then goals scored as tiebreakers.
+- [x] Replace the initial time-based wording with the confirmed day-only matching and manager-acceptance workflow.
+- [x] Record comprehensive match logs for scorers, assists, cards, player of the match, committee notes, and competitive or friendly classification.
+- [x] Let each manager upload and manage their own team logo image.
+- [x] Replace the Vite and Express implementation with a Next.js application using the App Router.
+- [x] Migrate secure authentication, database access, storage, role checks, and public/private discussion rules into Next.js-compatible services.
+- [x] Validate a production Next.js build and document Vercel environment requirements before any deployment is attempted.
+- [x] Restore structured match-log entry and visible event history after the sandbox recovery.
+- [x] Restore safe unauthenticated administrator access and the responsive mobile passwordless sign-in layout after recovery.
+- [x] Complete non-interactive protected-workflow validation through production builds, database policy review, redirect/access-denied states, and documented empty states.
+- [ ] Save the recovered UFA League Next.js platform as a new publish-ready project version.
+- [x] Add and verify manager-facing team-branding controls for editing team names and uploading or replacing team logos.
+- [x] Document and test the standings calculation that excludes friendlies and recalculates after confirmed competitive results.
+- [x] Verify the dashboard, fixtures, market, team-room, and administrator routes with disposable linked manager and administrator test sessions, then remove those test accounts.
+- [x] Restore authenticated execution for internal Supabase RLS helper functions while keeping anonymous execution revoked, then rerun authorization verification.
+- [x] Verify the rebuilt Next.js dashboard, fixtures, market, team-room, and administrator routes while signed in as disposable linked manager and administrator accounts, with desktop and mobile evidence.
+- [x] Exercise and document authenticated loading, empty, and access-denied states on protected Next.js routes, then remove the disposable verification accounts.
+- [x] Capture authenticated desktop and mobile evidence for disposable linked manager and administrator sessions on the protected UFA League routes.
+- [x] Exercise and document authenticated loading, empty, and access-denied states in browser-rendered protected UFA League routes before removing the disposable sessions.
+- [x] Capture authenticated desktop and mobile evidence for the remaining protected league, roster, and standings routes using disposable sessions and then remove those accounts.
+- [x] Exercise and document browser-rendered authenticated loading states across protected UFA League routes, then consolidate full protected-route coverage evidence.
+- [x] Capture authenticated global-loading evidence across every protected manager and administrator route, then retain the route-wide verification record before release.
+- [x] Diagnose and correct the recovered UFA League overview’s zero manager-team count against the seeded Supabase records.

@@ -1,0 +1,3 @@
+export default function Loading() {
+  return <main className="landing"><header className="topline"><div className="wordmark"><span className="mark">U</span><span>UFA League</span></div></header><section className="hero" aria-busy="true" aria-live="polite"><div><p className="eyebrow">Secure league workspace</p><h1>Preparing league workspace.</h1><p className="lede">Loading the latest fixtures, rosters, standings, and operational controls.</p></div><aside className="hero-card"><p className="eyebrow">Loading</p><div className="metric-grid"><div className="metric"><strong>···</strong><span>league record</span></div><div className="metric"><strong>···</strong><span>manager team</span></div></div></aside></section></main>;
+}
