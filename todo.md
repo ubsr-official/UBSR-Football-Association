@@ -27,7 +27,12 @@
 - [x] Implement deterministic overlap checks that propose shared days only after both teams submit availability and administrators publish the result.
 - [x] Add match records, structured match logs, friendly designation, and fixture-result approval controls.
 - [x] Add a live league points table that excludes friendlies and updates from confirmed competitive results.
-- [ ] Complete the remaining production-readiness work for data export, observability, and formal operating procedures.
+- [x] Complete the remaining production-readiness work for data export, observability, and formal operating procedures.
+- [x] Add administrator CSV exports for league members, team rosters, fixtures, and confirmed competitive results.
+- [x] Add an administrator operations view for market state, audit activity, and current league-record health indicators.
+- [x] Write a formal UFA League operating runbook covering account linking, auction entry, scheduling, result approval, market control, data export, and incident recovery.
+- [x] Validate production-readiness exports, operations controls, and the runbook before completing the final readiness item.
+- [x] Verify that disposable administrators can download each CSV export while linked managers are denied export access, then record the result.
 - [x] Test the expanded rule logic, responsive interface, repository state, and hosting-readiness build.
 - [x] Apply competitive standings rules of 3 points for a win, 1 for a draw, and 0 for a loss, with goal difference then goals scored as tiebreakers.
 - [x] Propose every valid shared available day, require both managers to accept a proposed day, and publish the fixture only after administrator approval.

@@ -40,6 +40,12 @@ async function page(path, cookie, fragment) {
   if (response.status !== 200 || !body.includes(fragment)) throw new Error(`Route verification failed for ${path}: ${response.status}`);
 }
 
+async function verifyExport(dataset, cookie, expectedStatus) {
+  const response = await fetch(`${appUrl}/api/admin/export/${dataset}`, { headers: { Cookie: cookie }, redirect: "manual" });
+  if (response.status !== expectedStatus) throw new Error(`Export authorization failed for ${dataset}: ${response.status}`);
+  if (expectedStatus === 200 && !response.headers.get("content-type")?.includes("text/csv")) throw new Error(`Export ${dataset} did not return CSV content.`);
+}
+
 try {
   const { data: team, error: teamError } = await admin.from("teams").select("id,manager_member_id").eq("is_active", true).limit(1).maybeSingle();
   if (teamError || !team?.manager_member_id) throw new Error(teamError?.message || "No active managed team is available.");
@@ -68,11 +74,13 @@ try {
   await page("/market", managerCookie, "Public trade desk");
   await page("/team-room", managerCookie, "Team identity");
   await page("/admin", managerCookie, "Administrator access required");
+  await verifyExport("members", managerCookie, 403);
 
   const administratorCookie = await sessionCookie(administratorEmail);
   await page("/admin", administratorCookie, "Commissioner workspace");
+  for (const dataset of ["members", "rosters", "fixtures", "results"]) await verifyExport(dataset, administratorCookie, 200);
 
-  console.log(JSON.stringify({ managerRoutesVerified: ["dashboard", "fixtures", "market", "team-room", "admin-access-denied"], administratorRoutesVerified: ["admin"] }));
+  console.log(JSON.stringify({ managerRoutesVerified: ["dashboard", "fixtures", "market", "team-room", "admin-access-denied"], administratorRoutesVerified: ["admin"], exportsVerified: ["members", "rosters", "fixtures", "results"] }));
 } finally {
   if (managerMemberId) await admin.from("league_members").update({ auth_user_id: priorMemberUserId ?? null }).eq("id", managerMemberId);
   if (priorArishUserId !== undefined) await admin.from("admin_seats").update({ user_id: priorArishUserId ?? null }).eq("seat", "arish");
