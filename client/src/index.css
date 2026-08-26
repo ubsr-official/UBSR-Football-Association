@@ -175,3 +175,18 @@
     }
   }
 }
+@theme inline {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-mono: "DM Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-[#F6F5F0] font-sans text-slate-800 antialiased; }
+}
+
+.font-display { font-family: "Playfair Display", Georgia, serif; }
+
+.league-card { @apply rounded-2xl border border-[#1B4332]/10 bg-white shadow-[0_14px_34px_-26px_rgba(27,67,50,0.42)]; }
+.league-panel { @apply rounded-xl border border-[#1B4332]/10 bg-[#FBFBF8]; }

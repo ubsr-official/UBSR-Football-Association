@@ -1,5 +1,27 @@
 {
   "version": "7",
   "dialect": "mysql",
-  "entries": []
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1787729832874,
+      "tag": "0000_omniscient_mercury",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1787730092991,
+      "tag": "0001_yielding_shocker",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1787731380699,
+      "tag": "0002_skinny_hawkeye",
+      "breakpoints": true
+    }
+  ]
 }
