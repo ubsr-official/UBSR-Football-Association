@@ -65,3 +65,7 @@
 - [x] Save the completed production-operations release as the final publish-ready UFA League project version.
 - [x] Fix the Next.js /fixtures prerender failure caused by eager Supabase service-role client initialization when build-time secrets are unavailable.
 - [x] Revalidate the corrected production build, tests, and protected fixtures route, then push the fix to GitHub main.
+- [x] Import the user-provided finalized Round 2 auction data: 45 sold players, all 9 manager rosters, spent totals, and remaining balances.
+- [x] Create a separate immutable auction log dataset/table that is independent from operational roster and balance records.
+- [x] Expose the finalized auction log publicly while preventing public users from changing auction records.
+- [x] Validate auction counts, manager totals, roster ownership, balances, and public read access, then checkpoint and push the completed release.

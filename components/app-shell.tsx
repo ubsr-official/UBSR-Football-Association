@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { CalendarDays, Gavel, Goal, House, MessageCircle, ShieldCheck, TableProperties, UsersRound } from "lucide-react";
+import { CalendarDays, Gavel, Goal, House, MessageCircle, ScrollText, ShieldCheck, TableProperties, UsersRound } from "lucide-react";
 import { getLeagueIdentity } from "@/lib/league";
 
 const nav = [
-  ["Overview", "/dashboard", House], ["League directory", "/league", UsersRound], ["Rosters", "/rosters", Goal], ["Fixtures", "/fixtures", CalendarDays], ["Standings", "/standings", TableProperties], ["Market", "/market", Gavel], ["Team room", "/team-room", MessageCircle],
+  ["Overview", "/dashboard", House], ["Auction log", "/auction-log", ScrollText], ["League directory", "/league", UsersRound], ["Rosters", "/rosters", Goal], ["Fixtures", "/fixtures", CalendarDays], ["Standings", "/standings", TableProperties], ["Market", "/market", Gavel], ["Team room", "/team-room", MessageCircle],
 ] as const;
 
 export async function AppShell({ children }: { children: React.ReactNode }) {

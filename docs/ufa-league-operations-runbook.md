@@ -18,6 +18,8 @@
 2. Confirm that the player’s base price and final bought price are correct before saving. The record, roster ownership, manager balance, activity feed, and audit trail update together.
 3. Use the **Rosters CSV** export to reconcile ownership and remaining balances after a material auction update.
 4. Do not place uncalled or in-progress auction players into a team roster until an administrator records a final outcome.
+5. After the auction closes, import the final results into the separate **Auction log** record. It is public and immutable; it preserves player snapshots, base prices, final bought prices, buying managers, and the completed round label.
+6. Treat `auction_records`, `roster_entries`, and team balances as operational records. The public auction log is historical evidence and must not be edited to correct later roster transfers or administrative adjustments.
 
 ## Day-only fixture workflow
 
@@ -44,7 +46,7 @@
 
 ## Exports, monitoring, and audit
 
-The Commissioner workspace provides CSV exports for members, rosters, fixtures, and confirmed competitive results. The Operations health card reports unlinked accounts, pending auction outcomes, published fixtures, current market state, and recent audit activity. Review it before auction sessions, fixture publication, and result confirmation.
+The public **Auction log** page displays the completed round without requiring sign-in. The Commissioner workspace provides CSV exports for members, rosters, fixtures, and confirmed competitive results. The Operations health card reports unlinked accounts, pending auction outcomes, published fixtures, current market state, and recent audit activity. Review it before auction sessions, fixture publication, and result confirmation.
 
 ## Incident recovery
 
